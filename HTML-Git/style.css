@@ -136,6 +136,9 @@ body {
         sans-serif;
     background-color: lightgrey;
     color: black;
+    background-image: url(background.jpg);
+    background-position: 0 0;
+    background-size: cover;
 }
 
 .container {
@@ -156,22 +159,33 @@ body {
 
 .header a {
     text-decoration: none;
-    color: darkmagenta;
+    color: darkblue;
 }
 
 .header a:hover {
-    background-color: lightskyblue;
+    background-color: darkblue;
     color: white;
     padding: 3px;
 }
 
+.header {
+    background-color: lightblue;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-top: 5px solid darkblue;
+    border-bottom: 5px solid darkblue;
+    overflow: hidden;
+}
+.judulatas {
+    float: left;
+}
 .fotoku {
     height: 400px;
     background-image: url(fotoku.jpg);
     background-size: cover;
     background-position: 0px;
-    border-top: 5px solid skyblue;
-    border-bottom: 5px solid skyblue;
+    border-top: 5px solid darkblue;
+    border-bottom: 5px solid darkblue;
 }
 
 h2 {
@@ -184,13 +198,23 @@ p {
 }
 .perkenalan .penulis p {
     font-size: 12px;
+    margin-top: -5px;
 }
 
 .perkenalan .paragraf {
-    padding-top: 10px;
+    margin-top: 10px;
     text-align: justify;
 }
 
 .perkenalan h2 {
     margin-top: 10px;
+}
+
+.header .logo {
+    float: right;
+    text-align: center;
+}
+
+.header .logo img {
+    height: 100px;
 }
