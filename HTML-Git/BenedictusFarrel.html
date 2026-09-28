@@ -9,12 +9,14 @@
             <div class="header">
                 <div class="judulatas">
                     <h1>SAYA</h1>
-                    <ul>
-                        <li><a href="#">perkenalan</a></li>
-                        <li><a href="#">pendidikan</a></li>
-                        <li><a href="#">more</a></li>
-                        <li><a href="#">hal favorit</a></li>
-                    </ul>
+                    <nav>
+                        <ul>
+                            <li><a href="#perkenalan">perkenalan</a></li>
+                            <li><a href="#pendidikan">pendidikan</a></li>
+                            <li><a href="#more">more</a></li>
+                            <li><a href="#favorit">hal favorit</a></li>
+                        </ul>
+                    </nav>
                 </div>
 
                 <div class="logo">
@@ -34,7 +36,7 @@
 
             <div class="fotoku"></div>
 
-            <div class="perkenalan">
+            <div class="card perkenalan" id="perkenalan">
                 <h2>Perkenalan</h2>
                 <div class="penulis">
                     <p>
@@ -60,81 +62,89 @@
                 </div>
             </div>
 
-            <div class="pendidikan">
+            <div class="card pendidikan" id="pendidikan">
                 <h2>Pendidikan</h2>
-                <p>
-                    Saya sekarang di Sanata Dharma angkatan 25. <br />
-                    Saya berada di jurusan <code> informatika</code>. <br />
-                    Mengikuti berbagai kegiatan ormawa seperti band dan basket.
-                    <br />
-                    Saya juga suka belajar <mark>HTML</mark> karena bisa membuat
-                    halaman web sederhana.
-                </p>
+                <div class="paragraf">
+                    <p>
+                        Saya sekarang di Sanata Dharma angkatan 25. <br />
+                        Saya berada di jurusan <code> informatika</code>. <br />
+                        Mengikuti berbagai kegiatan ormawa seperti band dan
+                        basket.
+                        <br />
+                        Saya juga suka belajar <mark>HTML</mark> karena bisa
+                        membuat halaman web sederhana.
+                    </p>
+                </div>
             </div>
 
-            <div class="more">
+            <div class="card more" id="more">
                 <h2>More About me</h2>
                 <pre>
 Aku merupakan kakak dari 2 bersaudara. Aku memiliki 1 adik laki-laki.
 Aku sekarang berumur 19 tahun.
         </pre
                 >
-                <p>
-                    Saya memiliki lirik lagu favorit seperti ini: Indonesia
-                    tanah airku tanah tumpah darahku Di sanalah aku berdiri jadi
-                    pandu ibuku Indonesia kebangsaanku, bangsa dan tanah airku
-                    Marilah kita berseru Indonesia bersatu Hiduplah tanahku,
-                    hiduplah negeriku Bangsaku, rakyatku, semuanya Bangunlah
-                    jiwanya, bangunlah badannya Untuk Indonesia Raya Indonesia
-                    Raya merdeka merdeka Tanahku negeriku yang kucinta Indonesia
-                    Raya merdeka merdeka Hiduplah Indonesia Raya. Ya ini adalah
-                    lagu kebangsaan Indonesia yang membuat aku bangga menjadi
-                    wni.
-                </p>
+                <div class="paragraf">
+                    <p>
+                        Saya memiliki lirik lagu favorit seperti ini: Indonesia
+                        tanah airku tanah tumpah darahku Di sanalah aku berdiri
+                        jadi pandu ibuku Indonesia kebangsaanku, bangsa dan
+                        tanah airku Marilah kita berseru Indonesia bersatu
+                        Hiduplah tanahku, hiduplah negeriku Bangsaku, rakyatku,
+                        semuanya Bangunlah jiwanya, bangunlah badannya Untuk
+                        Indonesia Raya Indonesia Raya merdeka merdeka Tanahku
+                        negeriku yang kucinta Indonesia Raya merdeka merdeka
+                        Hiduplah Indonesia Raya. Ya ini adalah lagu kebangsaan
+                        Indonesia yang membuat aku bangga menjadi wni.
+                    </p>
+                </div>
             </div>
 
-            <div class="lagu">
-                <p>Beberapa lagu favorit saya:</p>
-                <ul>
-                    <li>Karolina - Sore</li>
-                    <li>Untitled - Maliq</li>
-                    <li>Pokonya banyak deh</li>
-                </ul>
-            </div>
+            <div class="card favorit" id="favorit">
+                <h2>Hal Favorit Saya</h2>
+                <div class="lagu">
+                    <h3>Lagu Favorit</h3>
+                    <ul>
+                        <li><a href="https://youtu.be/9HR_sKhCwLA?si=TV8el8PgofUe9SKr">Sore - Karolina</a></li>
+                        <li><a href="https://youtu.be/2fpAG6wCOZQ?si=MK7ryKeakpr-skLe">Maliq & D'Essentials - Untitled</a></li>
+                        <li><a href="https://youtu.be/ANPUoFuWpEo?si=LPPOAfWRG9CuDSCc">Pokoknya banyak deh</a></li>
+                    </ul>
+                </div>
 
-            <div class="pemain">
-                <p>Beberapa pemain basket favorit saya:</p>
-                <ol>
-                    <li>LeBron James</li>
-                    <li>Denny Sumargo</li>
-                    <li>Jalen Brunson</li>
-                </ol>
-            </div>
+                <div class="pemain">
+                    <h3>Pemain Basket Favorit</h3>
+                    <ol>
+                        <li><a href="https://www.nba.com/player/2544/lebron-james">LeBron James</a></li>
+                        <li><a href="https://www.nba.com/player/1628973/jalen-brunson">Jalen Brunson</a></li>
+                        <li><a href="https://iblindonesia.com/news/ibl-legends-denny-sumargo-dan-tahun-keemasannya">Denny Sumargo</a></li>
+                    </ol>
+                </div>
 
-            <div class="makanan">
-                <h2>Ranking makanan favorit gueh</h2>
-                <table border="1">
-                    <tr>
-                        <th>Rank</th>
-                        <th>Nama</th>
-                        <th>Keterangan</th>
-                    </tr>
-                    <tr>
-                        <td>##1##</td>
-                        <td>Rendang</td>
-                        <td>Nyami</td>
-                    </tr>
-                    <tr>
-                        <td>##2##</td>
-                        <td>Ayam Sambal matah</td>
-                        <td>nyumi</td>
-                    </tr>
-                    <tr>
-                        <td>##3##</td>
-                        <td>Sei sapi</td>
-                        <td>Sedapp</td>
-                    </tr>
-                </table>
+                <div class="makanan">
+                    <h3>Ranking Makanan Favorit</h3>
+                    <table>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Nama</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>##1##</td>
+                            <td>Rendang</td>
+                            <td>Nyami</td>
+                        </tr>
+                        <tr>
+                            <td>##2##</td>
+                            <td>Ayam Sambal matah</td>
+                            <td>nyumi</td>
+                        </tr>
+                        <tr>
+                            <td>##3##</td>
+                            <td>Sei sapi</td>
+                            <td>Sedapp</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </body>

@@ -129,7 +129,9 @@ table {
     border-spacing: 0;
 }
 
-/* STYLE */
+/* 
+STYLE -------------------------------------------
+*/
 body {
     font:
         16px/1.5 Arial,
@@ -137,17 +139,41 @@ body {
     background-color: lightgrey;
     color: black;
     background-image: url(background.jpg);
-    background-position: 0 0;
-    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
 }
-
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+p {
+    font-size: 18px;
+}
+/*
+CONTAINER
+*/
 .container {
     width: 800px;
     margin: auto;
     background-color: white;
     padding: 30px;
+    border-radius: 25px;
+    box-shadow: 1px 8px 30px gray;
 }
-
+.header {
+    background-color: lightblue;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-top: 5px solid darkblue;
+    border-bottom: 5px solid darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    box-shadow: 0px 4px 12px gray;
+}
 .header h1 {
     font-size: 40px;
     font-weight: bold;
@@ -156,65 +182,137 @@ body {
     display: inline-block;
     margin-right: 5px;
 }
-
 .header a {
     text-decoration: none;
     color: darkblue;
+    padding: 3px 8px;
+    display: inline-block;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
-
 .header a:hover {
     background-color: darkblue;
     color: white;
-    padding: 3px;
+    transform: translateY(-2px);
 }
-
-.header {
-    background-color: lightblue;
-    margin-bottom: 20px;
+.header .logo {
+    text-align: center;
+}
+.header .logo img {
+    height: 100px;
+    transition: transform 0.3s ease;
+}
+.header .logo img:hover {
+    transform: scale(1.1);
+}
+.card {
     padding: 20px;
-    border-top: 5px solid darkblue;
-    border-bottom: 5px solid darkblue;
-    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+    border-left: 5px solid darkblue;
 }
-.judulatas {
-    float: left;
+.card:hover {
+    box-shadow: 0px 8px 20px grey;
 }
 .fotoku {
     height: 400px;
     background-image: url(fotoku.jpg);
     background-size: cover;
-    background-position: 0px;
+    background-position: center;
     border-top: 5px solid darkblue;
     border-bottom: 5px solid darkblue;
+    margin-bottom: 20px;
+    border-radius: 25px;
 }
 
-h2 {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-p {
-    font-size: 18px;
-}
 .perkenalan .penulis p {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: -5px;
+    font-style: italic;
 }
-
+.perkenalan .penulis a {
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.perkenalan .penulis a:hover {
+    background-color: darkblue;
+    color: white;
+    transform: translateY(-4px);
+}
 .perkenalan .paragraf {
     margin-top: 10px;
     text-align: justify;
 }
-
-.perkenalan h2 {
-    margin-top: 10px;
+.pendidikan p {
+    text-align: justify;
 }
-
-.header .logo {
-    float: right;
+.more .paragraf {
+    margin-top: 15px;
+}
+.card .lagu h3,
+.card .pemain h3,
+.card .makanan h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    color: darkblue;
+}
+.lagu ul,
+.pemain ol {
+    list-style: none;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+.lagu a,
+.pemain a {
+    text-decoration: none;
+    font-weight: bold;
+    color: darkblue;
+    display: block;
+    transition: all 0.3s ease;
+}
+.lagu ul li,
+.pemain ol li {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
     text-align: center;
+    border-left: 3px solid darkblue;
+    box-shadow: 0px 4px 12px gray;
+    transition: all 0.3s ease;
+    align-content: center;
 }
-
-.header .logo img {
-    height: 100px;
+.lagu ul li:hover,
+.pemain ol li:hover {
+    background: darkblue;
+}
+.lagu ul li:hover a,
+.pemain ol li:hover a {
+    color: white;
+}
+.makanan th,
+.makanan td {
+    border: 2px solid darkblue;
+    text-align: center;
+    padding: 10px;
+}
+.makanan th {
+    background: linear-gradient(to bottom, darkblue, skyblue);
+    font-weight: bold;
+    color: white;
+}
+.makanan table {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px gray;
 }
