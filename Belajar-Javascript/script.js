@@ -5,40 +5,51 @@ function buatPilihan() {
     let nama = document.getElementById("nama").value.trim();
     let jumlah = document.getElementById("jumlahPilihan").value;
 
+    // Validasi nama
     if (nama === "") {
         alert("Nama harus diisi!");
         return;
     }
+
     if (nama.length < 2) {
         alert("Nama minimal 2 karakter!");
         return;
     }
+
     if (/\d/.test(nama)) {
         alert("Nama tidak boleh mengandung angka!");
         return;
     }
+
+    // Validasi jumlah pilihan
     if (jumlah === "") {
         alert("Jumlah pilihan harus diisi!");
         return;
     }
 
     jumlah = parseInt(jumlah);
+
     if (isNaN(jumlah) || jumlah <= 0) {
         alert("Jumlah pilihan harus angka positif!");
         return;
     }
+
     if (jumlah > 10) {
         alert("Jumlah pilihan maksimal 10!");
         return;
     }
 
+    // Menghapus hasil sebelumnya
     document.getElementById("pilihan").innerHTML = "";
     document.getElementById("emailSection").innerHTML = "";
     document.getElementById("hasil").innerHTML = "";
+
     pilihanTersimpan = null;
     daftarPilihanTersimpan = [];
 
     let pilihan = document.getElementById("pilihan");
+
+    // Membuat input pilihan sesuai jumlah
     for (let i = 0; i < jumlah; i++) {
         pilihan.innerHTML +=
             "<p>Pilihan " +
@@ -48,32 +59,38 @@ function buatPilihan() {
             (i + 1) +
             "'></p>";
     }
+
     pilihan.innerHTML += "<button onclick='simpanPilihan()'>OK</button>";
 }
 
 function simpanPilihan() {
     let jumlah = parseInt(document.getElementById("jumlahPilihan").value);
+
     let daftarPilihan = [];
 
+    // Mengambil semua pilihan
     for (let i = 0; i < jumlah; i++) {
         let input = document.getElementById("pilihan" + (i + 1));
+
         if (input === null) {
             alert("Data pilihan tidak ditemukan. Silakan ulangi dari awal.");
             return;
         }
+
         let teks = input.value.trim();
+
+        // Cek pilihan kosong
         if (teks === "") {
             alert("Pilihan " + (i + 1) + " tidak boleh kosong!");
             return;
         }
-        if (teks.length < 1) {
-            alert("Pilihan " + (i + 1) + " minimal 1 karakter!");
-            return;
-        }
+
         daftarPilihan.push(teks);
     }
 
+    // Cek pilihan yang sama
     let pilihanUnik = [...new Set(daftarPilihan)];
+
     if (pilihanUnik.length !== daftarPilihan.length) {
         alert(
             "Terdapat pilihan yang sama! Silakan isi dengan pilihan yang berbeda.",
@@ -81,11 +98,14 @@ function simpanPilihan() {
         return;
     }
 
+    // Menyimpan pilihan
     daftarPilihanTersimpan = [...daftarPilihan];
 
     let hasilPilihan = document.getElementById("pilihan");
-    hasilPilihan.innerHTML = "<p><b>Pilihan :</b></p>";
 
+    hasilPilihan.innerHTML = "<p><b>Pilih salah satu:</b></p>";
+
+    // Membuat radio button
     for (let i = 0; i < daftarPilihan.length; i++) {
         hasilPilihan.innerHTML +=
             "<input type='radio' name='pilihan' value='" +
@@ -95,45 +115,63 @@ function simpanPilihan() {
             "'>" +
             "<label for='radio" +
             i +
-            "'> " +
+            "'>" +
             daftarPilihan[i] +
             "</label><br>";
     }
 
-    hasilPilihan.innerHTML +=
-        "<p><i>[Atau dalam bentuk Drop Down]</i></p>" +
-        "<select id='dropdownPilihan'>";
+    // Membuat dropdown
+    let dropdownHTML =
+        "<p><i>Atau pilih menggunakan Drop Down:</i></p>" +
+        "<select id='dropdownPilihan'>" +
+        "<option value=''>-- Pilih --</option>";
+
     for (let i = 0; i < daftarPilihan.length; i++) {
-        hasilPilihan.innerHTML +=
+        dropdownHTML +=
             "<option value='" +
             daftarPilihan[i] +
             "'>" +
             daftarPilihan[i] +
             "</option>";
     }
-    hasilPilihan.innerHTML +=
-        "</select><br><br>" +
+
+    dropdownHTML +=
+        "</select>" +
+        "<br><br>" +
         "<button onclick='simpanPilihanAkhir()'>OK</button>";
+
+    hasilPilihan.innerHTML += dropdownHTML;
 }
 
 function simpanPilihanAkhir() {
     let radio = document.querySelector("input[name='pilihan']:checked");
+
     let dropdown = document.getElementById("dropdownPilihan");
 
+    // Jika memilih radio button
     if (radio !== null) {
         pilihanTersimpan = radio.value;
-    } else if (dropdown !== null && dropdown.value !== "") {
+    }
+
+    // Jika memilih dropdown
+    else if (dropdown !== null && dropdown.value !== "") {
         pilihanTersimpan = dropdown.value;
-    } else {
+    }
+
+    // Jika belum memilih
+    else {
         alert("Silakan pilih salah satu pilihan!");
         return;
     }
 
+    // Menampilkan input email
     let emailSection = document.getElementById("emailSection");
+
     emailSection.innerHTML =
         "<p>Email:</p>" +
         "<input type='email' id='email' " +
-        "pattern='[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}' required>" +
+        "pattern='[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}' " +
+        "required>" +
         "<br><br>" +
         "<button onclick='selesai()'>OK</button>";
 }
@@ -141,28 +179,37 @@ function simpanPilihanAkhir() {
 function selesai() {
     let email = document.getElementById("email");
 
+    // Cek input email
     if (email === null) {
         alert("Input email tidak ditemukan. Silakan ulangi dari awal.");
         return;
     }
+
     if (email.value.trim() === "") {
         alert("Email harus diisi!");
         return;
     }
+
     if (!email.checkValidity()) {
         alert("Format email tidak valid! (contoh: nama@gmail.com)");
         return;
     }
+
+    // Cek pilihan
     if (pilihanTersimpan === null) {
         alert("Silakan pilih salah satu pilihan terlebih dahulu!");
         return;
     }
 
     let nama = document.getElementById("nama").value.trim();
+
     let jumlah = parseInt(document.getElementById("jumlahPilihan").value);
+
     let daftarPilihan = daftarPilihanTersimpan;
 
+    // Menampilkan hasil akhir
     let hasil = document.getElementById("hasil");
+
     hasil.innerHTML =
         "<div class='hasil-box'>" +
         "<h3>Hasil</h3>" +
