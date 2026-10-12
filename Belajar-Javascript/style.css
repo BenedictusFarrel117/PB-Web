@@ -1,0 +1,67 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #4a6cf7, #7b8cff);
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.header .foto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    background: white;
+}
+
+.header .identitas h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.header .identitas p {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+main {
+    padding: 0 25px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-width: 250px;
+}
+
+button {
+    padding: 6px 20px;
+    border: 1px solid #888;
+    background: #f5f5f5;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e0e0e0;
+}
+
+.hasil-box {
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #4a6cf7;
+    border-radius: 4px;
+    margin-top: 15px;
+}
